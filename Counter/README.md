@@ -1,8 +1,13 @@
 # React + Vite
+ 
+in this project i used useState hook and this proiject is created to understand how useState hook works behind the Scene and how it is used to reflect changes in UI , 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# syntax
 
-Currently, two official plugins are available:
+let{value, setValue} = useStae(0);
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+here value = variable 
+     
+     inside useState variable is initialized
+
+     setValue is a function responsible for updating variable
