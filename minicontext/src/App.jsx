@@ -1,11 +1,20 @@
+import Login from "./components/Login"
+import Profile from "./components/Profile"
+import UserContextProvider from "./context/userContextProvider"
 
 
 function App() {
 
   return (
-    <>
-     <h1>Hello</h1>
-    </>
+    
+    <UserContextProvider>
+
+        <h1>React with Chai and Share is Important</h1>
+        <Login/>
+        <Profile/>
+
+
+    </UserContextProvider>
   )
 }
 
