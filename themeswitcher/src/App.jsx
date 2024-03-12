@@ -1,6 +1,8 @@
-import { useState } from 'react'
+import { useState , useEffect } from 'react'
 import './App.css'
-import { ThemeProvider } from './contexts/theme'
+import { ThemeProvider } from './contexts/theme.js'
+import ThemeBtn from './components/ThemeBtn';
+import Card from './components/Card';
 
 function App() {
   
@@ -31,11 +33,13 @@ function App() {
        <div className="flex flex-wrap min-h-screen items-center">
             <div className="w-full">
                     <div className="w-full max-w-sm mx-auto flex justify-end mb-4">
-                        {/* THEME BUTTON */}
+                        <ThemeBtn />
                     </div>
 
                     <div className="w-full max-w-sm mx-auto">
-                        {/* CARD */}
+                        
+                        <Card />
+
                     </div>
              </div>
        </div>
