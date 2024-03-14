@@ -10,6 +10,22 @@ function App() {
 
     setTodos((oldTodo)=> [{id: Date.now() , ...todo} , ...oldTodo] )
   }
+
+  const updateTodo = (id, todo) => {
+
+    setTodos((oldTodo) => oldTodo.map((oldTodos) => (oldTodos.id === id ? todo:oldTodos )))
+
+                            // or by using for each
+
+    // oldTodo.map((eachVal) => {
+
+    //   if(eachVal.id === id){
+
+    //     todo 
+
+    //   }
+    // })
+  }
   
   return (
     <TodoProvider value={{todos, addTodo, deleteTodo ,updateTodo , toggleComplete}}>
