@@ -5,6 +5,11 @@ import { TodoProvider } from "./contexts"
 function App() {
 
   const [todos , setTodos ] = useState([])
+
+  const addTodo = (todo) =>{
+
+    setTodos((oldTodo)=> [{id: Date.now() , ...todo} , ...oldTodo] )
+  }
   
   return (
     <TodoProvider value={{todos, addTodo, deleteTodo ,updateTodo , toggleComplete}}>
