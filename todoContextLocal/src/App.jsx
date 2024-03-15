@@ -8,16 +8,16 @@ function App() {
 
   const addTodo = (todo) =>{
 
-    setTodos((oldTodo)=> [{id: Date.now() , ...todo} , ...oldTodo] )
+    setTodos((prev)=> [{id: Date.now() , ...todo} , ...prev] )
   }
 
   const updateTodo = (id, todo) => {
 
-    setTodos((oldTodo) => oldTodo.map((oldTodos) => (oldTodos.id === id ? todo:oldTodos )))
+    setTodos((prev) => oldTodo.map((prevTodo) => (prevTodo.id === id ? todo : prevTodo )))
 
                             // or by using for each
 
-    // oldTodo.map((eachVal) => {
+    // prev.map((eachVal) => {
 
     //   if(eachVal.id === id){
 
@@ -29,7 +29,13 @@ function App() {
 
   const deleteTodo = (id) => {
 
-    setTodos((oldTodo) => oldTodo.filter((todo) => todo.id !== id))
+    setTodos((prev) => prev.filter((todo) => todo.id !== id))
+  }
+
+
+  const toggleComplete = (id) => {
+
+    setTodos((prev) => prev.map((prevTodo) => prevTodo === id ? {...prevTodo, completed: !prevTodo.completed}: prevTodo))
   }
   
   return (
