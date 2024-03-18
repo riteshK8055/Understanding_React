@@ -1,8 +1,7 @@
 # React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is made to understand the concepts of redux toolkit how it works and how reduux toolkit model works
 
-Currently, two official plugins are available:
+by making this project i understand the flow of data in redux toolit i.e how data is updste in store and then dispatch to the UI as well as how can we access data from store using select
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+in this project we also learn how to setup redux toolkit environment in various steps
