@@ -1,4 +1,5 @@
-
+import Board from "./component/Board"
+import "./App.css";
 
 function App() {
   
@@ -6,7 +7,12 @@ function App() {
   return (
     <>
      
-     <h1 >Welcome to tic tac toe game development project</h1>
+     <div className="App">
+
+       <Board />
+
+     </div>
+
     </>
   )
 }
