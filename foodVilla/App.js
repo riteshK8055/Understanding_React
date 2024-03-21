@@ -1,15 +1,19 @@
 /*
-*
-*
-*
-*
-*
-*
-*
-*
-*
-*
-*
+* HMR - HOT module replacement
+* File Watcher Algorithm
+* BUNDLING
+* MINIFYING
+* Cleaning our code
+* Dev And production Build
+* Super fast build Algorithm
+* Image Optimisation
+* Caching while Development
+* compatible with older version of browser
+* add polyfills
+* HTTPS on dev
+* Port no
+* Consistent Hashing Algorithm
+* Zero Config
 */
 
 
@@ -20,39 +24,33 @@ import ReactDOM from "react-dom/client";
 
 
 
-const heading = React.createElement(
-
-    "h1",
-    {
-        id: "title"
-    },
-
-    "heading 1"
+const heading = (
+ <h1 id="title" key="h1">
+       Namaste React 
+ </h1>
 );
 
-const heading2 = React.createElement(
+const HeadingComponent = () => {
 
-    "h1",
-    {
-        id: "title"
-    },
+    return (
 
-    "heading 2"
-)
+        <div>
+            
+            <h1>Namaste react functional component woshhhhhh</h1>
+            <h2>This is a h2 tag</h2>
 
-const container = React.createElement(
+        </div>
+    )
+};
 
-    "div",
-    {
-        id:"container"
-    },
+const HeadingComponent2 = () => (
 
-    [heading , heading2]
-
-    
-    
+    <>
+        <h1>This is another way of writin jsx bc</h1>
+        <h2>this is h2 tag</h2>
+    </>
 );
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(container);
+root.render(<HeadingComponent2 />);
