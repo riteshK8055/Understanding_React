@@ -74,3 +74,39 @@ This Project Is built To understand the concepts of react and this is a revision
 
     the browserList configuration controls the outputed js , so that the emitted code will be compatible with the browser specified , if you intend to use a E.S 6 feature make sure all browser specified supports it , otherwise you have to include Pollyfills manually React will not do it for you automatically.
 
+
+# Day 3
+
+1. Pollyfills :- a peice of code (usually js on the web) used to make older browser understand our new code , the new code is converted into 
+                 older code which browser can understand called Pollyfill.
+
+2. Babel :-  Babel is a toolchain that is mainly used to convert E.S 2015 code into backward compatible version of js in current and older
+             browser or environment.
+
+3. Reconciliation :- is a Reacts wayt of diffing the virtual Dom tree with the updated dom tree to determine the most efficient way to update
+                     the real dom , this process allow react to apply only the necessary changes to the DOM , avoiding the costly operations for updating the entire dom tree.
+
+4. why we use Keys in React ?
+
+   when children have keys , react uses the key to match Children in the original tree with children in subsequent tree thus making tree
+   conversion efficient. React keeps track of keys.
+
+5. J.S.X ?
+
+   jsx allows us to write html elements inside js & place them in dom without any createElement , jsx makes it easier to write and add html in React . our browser can't understand jsx Babel understood this code.
+
+   J.S.X ===>  React.createElement() ====> Object ====>  Html (dom)
+
+   jsx is created to empower react.
+  
+6. React Components 
+
+   components let you split the ui into sevral indipendent , reusable peices & think about each peices in isolation.
+
+   React functional components is normal js functions which returns some peice of react elements (here J.S.x)
+
+   you can write any peice of js inside { }.
+
+7. Component Composition 
+
+   if we have to use components inside components it is known as component composition , it is like passing components into components.
