@@ -1,5 +1,4 @@
-import React from "react";
-
+export const IMG_CDN_URL = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";
 
 export const RestaurantList = [
     {
@@ -1200,20 +1199,3 @@ export const RestaurantList = [
       }
     }
   ]
-
-const RestaurantCard = ({ name , cloudinaryImageId , cuisines , avgRating }) => {
-
-    return(
-
-        <div className="Restaurant-card">
-
-            <img src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" + cloudinaryImageId} />
-            <h2>{name}</h2>
-            <h3>{cuisines.join(" , ")}</h3>
-            <h4>{avgRating}</h4>
-
-        </div>
-    );
-};
-
-export default RestaurantCard;
