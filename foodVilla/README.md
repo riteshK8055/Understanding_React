@@ -164,3 +164,57 @@ This Project Is built To understand the concepts of react and this is a revision
    its a reconcilliation engine , which is responsible for diff algorith.
 
 
+# Day 5
+
+1. export , import , named export , named import 
+
+2. 1 way data binding
+
+   in react components are rendered to the user interface , & the components logic contain the data to be displayed in the view (U.I) the binding happens in one way either any changes in data automatically updated into ui but change in ui does not automatically update the data.
+
+3. React Variable 
+  
+   its like a state variable.
+
+   **Every components in react maintains a state so you can put some variable on to the state**
+
+   **EveryTime you have to create a local variable , you use state in it**
+
+   in React , if i want to create a local variable  , i will create using useState Hook
+
+4. what is state in react ?
+
+   the state is a built in react object that is used to contain data or information about components , a component's state can change over time  , whenever it changes the component re-renders , the change is state can happens as a response to user action or system-generated events & these changes determine the behaviour of the component & how it will render.
+
+
+5. what is Hooks ?
+
+   Hooks allows functional component to have access to state & other react features bcoz of this class components are generally no longer needed.
+
+6. Hooks Rules ?
+
+   hooks can only be called inside react functional components.
+  
+   hooks can only be called at the top level of components.
+
+   hooks cannot be conditional.
+
+   hooks will not work in react class components.
+
+7. React useState Hook :-
+ 
+   the react useState hooks allows us to track state in functional components.
+
+   state generally refers to data or properties that need to be tracking in an application.
+
+   **Syntax** :- const [ state , setState] = useState(0);
+
+8. why do we need state variable if we have already local variable ?
+
+   bcoz react has no idea whats happening to your local variable , so react won't re-render any updates happening on that variable , everytime the variable wants to be in sync with the ui for that we need to use state Variable.
+
+   ***React keeps track of state Variable***
+
+   whenever my variable is updated , my whole Body (here) components re-renders i.e react distroy the Body components & create it again Reconcilliation (diff algorithm ) is happening behind the scene .
+
+   but it just re-renders the updated portion it is very quick.
