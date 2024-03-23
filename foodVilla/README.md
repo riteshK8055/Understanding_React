@@ -110,3 +110,57 @@ This Project Is built To understand the concepts of react and this is a revision
 7. Component Composition 
 
    if we have to use components inside components it is known as component composition , it is like passing components into components.
+
+# Day 4
+
+1. React Fragments : <> </>
+
+2. jsx can only have one parent
+
+3. config driven U.I
+
+   it is a technique that allows you to create user interfaces based on configuration files , such as JSON or typescript file that defines the layout and the content of the UI components , this can be useful for creating dynamic & customizabel UI's without hard coding them.
+
+4. optional Chaining (?.)
+   
+   (?) operator access an objects property or calls a function , if the object accessed or function called using this operator is undefined or null the expression short circuits & evaluates to UNDEFINED instead of throwing error .
+
+5. Props
+  
+   shorthand for properties 
+   "passed props" means i am passing some data as properties into my functional component.
+
+   restaurant = {restaurantList[3]} this means react wraps all these properties into a variable known as "props" i can call it anything.
+
+6. virtual Dom :- it is a light weight copy of the actual dom ( a virtual representation of DOM) , so for every object that exist in the   
+   original DOM there is an object for that in react virtual DOM it is exactly the same , but it does not have the power to directly change the layout of the browser.
+
+   it is fast bcoz after manipulation it only re-renders changed elements
+
+
+7. Reconciliation :- 
+   
+   the reconciliation process is a algorithm (diff algorith) react uses to diffrentiate one tree with another to determine which part needs to be changed.
+
+8. Diff Algorithm :-
+
+   a mathematical algorithm used to compare two versions of text-files or codebases & determine the diffrence between them.
+
+9. why we have to use keys in react ?
+
+  keys are special attribute that assists React in determining which items in a list of components have changed , been added or removed , React uses the key to keep track of each component identity when rendering a list of components & if the key is missing , React must  search through the entire list to determine which components has changed this can lead to performance issue & even unexpected bugs.
+
+  **no key ==> not acceptable    index key ==> (only if you dont have anything unique)   unique key ==> good practise**
+
+10. why should we won't use index as key ?
+
+   performance issue due to unnecessary rerenders.
+
+   issue in data mapping in case list items are sorted filtered or deleted.
+
+
+11. React fiber 
+   
+   its a reconcilliation engine , which is responsible for diff algorith.
+
+
