@@ -21,36 +21,20 @@
 
 import React from "react";
 import ReactDOM from "react-dom/client";
+import Header from "./Components/Header";
+import Body from "./Components/Body";
+import Footer from "./Components/Footer";
 
 
-
-const heading = (
- <h1 id="title" key="h1">
-       Namaste React 
- </h1>
-);
-
-const HeadingComponent = () => {
-
-    return (
-
-        <div>
-            
-            <h1>Namaste react functional component woshhhhhh</h1>
-            <h2>This is a h2 tag</h2>
-
-        </div>
-    )
-};
-
-const HeadingComponent2 = () => (
+const AppLayout = () => (
 
     <>
-        <h1>This is another way of writin jsx bc</h1>
-        <h2>this is h2 tag</h2>
+        < Header />
+        < Body />
+        < Footer />
     </>
 );
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(<HeadingComponent2 />);
+root.render(< AppLayout />);
