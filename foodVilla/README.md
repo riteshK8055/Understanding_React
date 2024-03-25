@@ -218,3 +218,33 @@ This Project Is built To understand the concepts of react and this is a revision
    whenever my variable is updated , my whole Body (here) components re-renders i.e react distroy the Body components & create it again Reconcilliation (diff algorithm ) is happening behind the scene .
 
    but it just re-renders the updated portion it is very quick.
+
+ # Day 6 #
+
+1. a monolithic standard means that all the components of the application were part of a single unit of code it has lot of problems.
+
+2. a microservice - based architecture is one wheere the application is broken down into small & independent services which are than combined to become a large application , imagine multiple small application each with  only one service combined to make one large application.
+
+3. how to make api call ?
+
+   js gives us fetch() function.
+
+4. where do we call api in our component ?
+
+   on every state change or any time my ui is updated , this would get rerendered if we call api just after or before the useStae declaration , this is not sa good way.
+
+5. Best way to call an api ?
+
+   it should be like , as in when our component loaded it used to call an api $ fill the data , there is diffrent way to handle this in react :-
+
+   -> **user loads the website ===> make an api call   ====> render page**
+
+   -> **user loads the website ===> render the initial page ===> make an api call ===> update the ui**
+
+   2nd way is the good way , all this will happen very quickly to make this happen , react gives us a hook : **UseEffect**
+
+6. useEffect hook 
+
+   the useEffect hooks allows you to perform side effect in your components , some examples of side effects are :-
+
+    fetching data , directly updating dom & timers
