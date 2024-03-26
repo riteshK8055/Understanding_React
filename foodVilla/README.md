@@ -248,3 +248,142 @@ This Project Is built To understand the concepts of react and this is a revision
    the useEffect hooks allows you to perform side effect in your components , some examples of side effects are :-
 
     fetching data , directly updating dom & timers
+
+    **syntax :- useEffect(callback functn , dependency array)**
+
+    1. if there is no dependency arrray useEffect will call after every render
+
+    2. if there is empty dependency array useEffect will call only once i.e after initial render.
+
+    3. if there is any dependency array useEffect will call whenever the dependency will change.
+
+
+7. Conditional Rendering
+
+   1. in react , you can create distinct components that encapsulates behaviour you need , then you can render only some of them , depending
+      on the state of your application.
+
+   2. your component will often needs to display diffrent things depending on diffrent condn.
+
+   3. in react , you can conditionally render jsx using js syntax like  if statement , && operator , ?: operator
+
+
+8. Shimmer U.I
+
+   shimmer ui is a better way to show loading states in your web or mobile app . it improves the user experience by providing visual feedback , reducing cognitive load , eliminating surprises , & enhancing asthetic appeal , it can be implemented using diffrent platforms & frameworks such as Flutter , microsoft fluent UI for shiny , or html & css.
+
+
+# Day 7#
+
+1. never create a component inside a component.
+
+2. you can compose the components.
+
+3. never write a useState inside if else or for loop.
+
+4. useState is a hook that react gives us to create loacal state variable inside a functional component, so never use useState outside a functional component.
+
+5. we can use more than 1 useEffect according to the useCases.
+
+6. why cdn is a good place to host images ?
+
+  C.D.N is faster it caches the image , it returns veryfast, & have 100% uptime. 
+
+7. **ROUTING (createBrowserRouter , useRouterError , RouterProvider- Component )**
+
+1. finding the path of diffrent pages of our app.
+
+-> for that we uses a library or npm package called React Router.
+
+-> to make it work we have to we first have to create a routing Configuration.
+
+-> {createBrowserRouter} is a function we get from react router-dom it will help us create routing.
+
+-> createBrowserRouter is the most recommended route for all React router projects.
+
+-> this alone wont work we need to provide appRouter to our app.
+
+-> for that there is a component RouterProvider which is coming from react router dom , import it.
+
+-> and render the Router provider in your app.js
+
+     root.render(<RouterProvider router = {appRouter} />)
+
+-> react-router-dom is a powerful library which gives us better ui for showing us this error pages.
+
+-> create an error page of your own "Error.js" & paas this error to our router config 
+
+   {
+      path: "/",
+      element : <Applayout />,
+      error element : <Error />
+   }
+
+-> if there is an error in the path , it will load the error element
+
+-> to show more information about the error in the error page "react-router-dom" gives us {useRouterError} , import this in error.js
+
+   import {useRouterError}  from "react-router-dom"
+
+-> {useRouterError } is a hook which wont allow that red color error to came in console it catch all routing errors & we can show those 
+   errors to the user.
+
+const Error = () => {
+
+   const err = useRouterError();
+
+   return (
+
+      <div>
+         
+         <h1> OOPs!!! something went wrong </h1>
+         <h2> `
+            
+            {err.status + ":" + err.statusText}
+
+          </h2>
+      </div>
+   );
+};
+
+8. Problem with anchor tag:-
+
+  it will reload the entire page when it is clicked it disrupts user experience & can result in a slower page load time , this cause problems for Spas.
+
+9. two types of routing :-
+
+-> Server side rendering :-
+
+   --- all our pages come from server.
+   --- makes a network call , get the Html , css , js & loads the whole page.
+
+-> Client side routing :-
+
+   --- dynamically update content of spa in response to change in URL.
+   --- dont do full page reload.
+
+10. React router gives {Link}
+
+   --- to keep Header && Footer stick on the every page change the routing config .
+   --- react router gives access to OUTLET this OUTLET will be filled by the configuration so all children will go inside OUTLET according to
+       the route.
+
+11. Dynamic Routing :-
+
+   -> process of rendering components in response to a change in the application's URL.
+
+   -> if the route is like :-
+
+      {
+         path : "restaurant/:id",
+
+         element : <Restaurant />
+      }
+
+   to read the "id" passed in URl "react router dom gives us {useParams} its the routing parameter"
+
+12. **WHEN YOU WRITE YOUR CODE IN MODULAR FASHION THEN WE CAN REUSE IT A LOT.**
+
+
+
+
