@@ -385,5 +385,98 @@ const Error = () => {
 12. **WHEN YOU WRITE YOUR CODE IN MODULAR FASHION THEN WE CAN REUSE IT A LOT.**
 
 
+# Day 8 #
+
+1. custom Hooks 
+
+-> why should we build Hooks ?
+
+   - Reusability.
+   - Readability.
+   - Seperation of concern.
+   - Modularity.
+   - Maintainability.
+
+2. Hooks are just normal j.s function.
+
+3. functions are used to wrap up a logic and can reuse it anywhere we want to.
+
+4. Great place to keep re-usable functions :-
+
+  - Make a folder utils  (its utility , helper , or common or whetever name).
+
+  - inside create a file utils.js & write the function inside it and make it named export.
+
+  - any no of helper function can be kept inside Utils.js
+
+5. Advantages 
+
+  - function become readable and usable.
+  - this makes our code more testable because i can write seperate  testcases for this.
+  - maintainable bcoz it is easy to debug.
+  - Modularity means we have broken down code into small peices & every peices have its own responsibility.
 
 
+6. Cleaning Cache
+
+  - whenever eventrListner is added , we should clean it up.
+  - [whenever you are going offline & getting back online eventListner is created, only once because we've empty dependency array]
+  - it is always a good practise to clear the eventListner when we go out of the component otherwise browser will keep hold those.
+
+7. _Problem :-_
+
+  - for the whole code parcel creates only one .js file in this file, all the code is bundeled together  so the size of this index.js file 
+    is large . but in production bundle, size of this file should be small.
+
+  - there would be 100s 0f components in a large websiite , suppose if all these bundled together in a single index.js file . it will blast , 
+    it will make our app very slow. so to build large scale production ready application we should do :-
+
+    **Chunking** also called as :-
+
+    - Code Splitting                             - on Demand Loading.
+    - Dynamic Bundling                           - Dynamic import.
+    - Lazy Loading
+
+8. making a new diffrent bundle in our app.
+
+   to do that import component like this 
+
+    const Instamart = lazy (() => import ("./components/Instamart"))
+
+    so now the "index.js" file in dist folder wont have code of instamart , it is created as seperate file while loading.
+
+    "When you are loading your component in demand react tries to suspend it".
+
+
+    so when instamart is loaded for the 1st time , we see an error message on screen.
+
+    this is because , instamart file took 27ms to get loaded but react tries to render it before it get loaded , thats why error.
+
+    _Solution for this_ 
+
+    "Suspense" :- we can wrap instamart inside Suspense
+
+    {
+
+      path: "/instamart",
+      element: (
+
+         <Suspense>
+             
+             <Instamart />
+
+         <Suspense>
+      )
+
+    }
+
+React now know that when there is a suspense what will be loaded
+
+in the intermediate time , a shimmer should be shown .
+
+so there is is prop known as "fallback" so write :-
+
+ <Suspense fallback = {<shimmer />}>
+
+          <Instamart />
+ </Suspense>
