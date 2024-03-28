@@ -6,7 +6,8 @@ const RestaurantMenu = () => {
 
     const {id}  = useParams();
 
-    const[ restaurant , setRestaurant] = useState({});
+    const[ restraunt , setRestraunt] = useState({});
+    const[menu , setMenu] = useState({});
 
 
     useEffect(() => {
@@ -15,13 +16,14 @@ const RestaurantMenu = () => {
        
     },[]);
 
-    console.log(restaurant)
 
     const getRestaurantInfo = async () => {
 
-        const data =await  fetch("https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.7040592&lng=77.10249019999999&restaurantId=89571&catalog_qa=undefined&submitAction=ENTER");
+        const data =await  fetch("https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.920887&lng=77.6156642&restaurantId=712380&catalog_qa=undefined&isMenuUx4=true&submitAction=ENTER");
         const json = await data.json();
-        setRestaurant(json.data.cards[2].card.card.info);
+        setRestraunt(json.data.cards[2].card.card.info);
+        console.log(json.data.cards[4].groupedCard.cardGroupMap.REGULAR.cards[1].card.card.itemCards)
+        setMenu(json.data.cards[4].groupedCard.cardGroupMap.REGULAR.cards[1].card.card)
     }
     return (
 
@@ -30,17 +32,21 @@ const RestaurantMenu = () => {
         <div>
 
           <h1>Restaurant id :{id}</h1>
-          <h2>{restaurant.name}</h2>
-          <img  src={IMG_CDN_URL + restaurant.cloudinaryImageId} />
-          <h3>{restaurant.area}</h3>
-          <h3>{restaurant.costForTwo}</h3>
-          <h3>{restaurant.avgRating}</h3>
+          <h2>{restraunt.name}</h2>
+          <img  src={IMG_CDN_URL + restraunt.cloudinaryImageId} />
+          <h3>{restraunt.city}</h3>
+          <h3>{restraunt.costForTwo}</h3>
+          <h3>{restraunt.avgRating}</h3>
 
         </div>
 
-        {/* <div>
-            {console.log(restaurant.menu.items)}
-        </div> */}
+        { <div> 
+
+            <h1>Menu</h1>
+            <ul>
+            {Object.values(menu.card.itemCards).map((item) => <li key={item.card.info.id}>{item.card.info.name}</li>)}
+            </ul>
+        </div>   }
 
     </>
     )
