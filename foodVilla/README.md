@@ -480,3 +480,31 @@ so there is is prop known as "fallback" so write :-
 
           <Instamart />
  </Suspense>
+
+
+ # Day 9 #
+
+ 1. learnt how to use css in react.
+
+ 2. ways of writing css.
+
+    - normal css in index.css
+    - inline c.s.s using J.s ( make a style object write css in that & pass it where you want to use it ).
+    - this is not a good way of writing css.
+    - no reusability.
+    - job of processing is heavy in case of inline css.
+
+3. css/sass
+
+4. libraries like -> Material ui , Ant , Chakra , Tailwind css.
+
+5. styled components
+
+6. used Tailwind css
+
+  - css on the go.
+  - reusability
+  - less bundle size.
+  - very flexible / customizable.
+  - tailwind css overwrite everything.
+  - every style we put is associated with a className.
