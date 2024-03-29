@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { IMG_CDN_URL } from "../config";
+import Shimmer from "./Shimmer";
 
 const RestaurantMenu = () => {
 
     const {id}  = useParams();
+    console.log(id);
 
     const[ restraunt , setRestraunt] = useState({});
-    const[menu , setMenu] = useState({});
+    const[menu , setMenu] = useState(null);
 
 
     useEffect(() => {
@@ -19,17 +21,23 @@ const RestaurantMenu = () => {
 
     const getRestaurantInfo = async () => {
 
-        const data =await  fetch("https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.920887&lng=77.6156642&restaurantId=712380&catalog_qa=undefined&isMenuUx4=true&submitAction=ENTER");
+        const data =await  fetch(`https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.9351929&lng=77.62448069999999&restaurantId=${id}&catalog_qa=undefined&isMenuUx4=true&submitAction=ENTER`);
         const json = await data.json();
+        console.log(json.data.cards[2].card.card.info)
         setRestraunt(json.data.cards[2].card.card.info);
-        console.log(json.data.cards[4].groupedCard.cardGroupMap.REGULAR.cards[1].card.card.itemCards)
-        setMenu(json.data.cards[4].groupedCard.cardGroupMap.REGULAR.cards[1].card.card)
+        console.log(json.data.cards[4].groupedCard.cardGroupMap.REGULAR.cards[2].card.card.itemCards)
+        setMenu(json.data.cards[4].groupedCard.cardGroupMap.REGULAR.cards[2].card.card.itemCards)
+    }
+
+    if(!menu){
+
+        return <Shimmer />
     }
     return (
 
-    <>
+    <div className="Menu">
 
-        <div>
+        <div className="card">
 
           <h1>Restaurant id :{id}</h1>
           <h2>{restraunt.name}</h2>
@@ -44,11 +52,11 @@ const RestaurantMenu = () => {
 
             <h1>Menu</h1>
             <ul>
-            {Object.values(menu.card.itemCards).map((item) => <li key={item.card.info.id}>{item.card.info.name}</li>)}
+            {Object.values(menu).map((item) => <li key={item.card.info.id}>{item.card.info.name}</li>)}
             </ul>
         </div>   }
 
-    </>
+    </div>
     )
 }
 

@@ -1,5 +1,5 @@
 *{
-    margin: 0;
+    margin: 1px;
     padding: 0;
     box-sizing: border-box;
 }
@@ -49,4 +49,20 @@
     display: flex;
     flex-wrap: wrap;
    
+}
+
+.Menu{
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 5px solid black;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.Menu >.card >img{
+
+    width: 400px;
+    height: 400px;
 }

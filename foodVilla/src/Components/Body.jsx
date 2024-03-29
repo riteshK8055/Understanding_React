@@ -3,6 +3,7 @@ import RestaurantCard from "./RestaurantCard";
 import { RestaurantList } from "../config";
 import { useState } from "react";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 
 
 const filterData = (searchInput, restaurants) =>{
@@ -32,7 +33,7 @@ const Body = () => {
 
     async function getRestaurant(){
 
-      const data = await  fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.920887&lng=77.6156642&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
+      const data = await  fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
       const json = await data.json();
       setRestaurants(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
       setFilteredRestaurant(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
@@ -81,7 +82,15 @@ const Body = () => {
                    
                    filteredRestaurant.map((restaurant) => {
 
-                     return  <RestaurantCard {...restaurant.info } key={restaurant.info.id} />
+                     return (
+
+                         <Link 
+                            to={"/restaurant/"+restaurant.info.id }
+                            key={restaurant.info.id}
+                         >
+                           <RestaurantCard {...restaurant.info }  />
+                         </Link>
+                     )
                    })
           };
 
