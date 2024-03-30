@@ -507,4 +507,4 @@ so there is is prop known as "fallback" so write :-
   - less bundle size.
   - very flexible / customizable.
   - tailwind css overwrite everything.
-  - every style we put is associated with a className.
+  - every style we put is associated ith a className.
