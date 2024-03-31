@@ -47,10 +47,10 @@ const Body = () => {
 
       <> 
 
-      <div className="search-container">
+      <div className="search-container p-5 bg-pink-50 my-5">
 
            <input type="text"
-            className="search-input"
+            className="search-input p-1 m-1 rounded-sm border-2 border-purple-950 bg-purple-50"
             placeholder="Search"
             value= {searchInput}
             onChange={(e) =>{
@@ -61,7 +61,7 @@ const Body = () => {
             />
 
             <button
-             className="btn"
+             className="btn p-1 m-1 bg-purple-700 hover:bg-purple-300 transition-all   rounded-md"
              onClick={() =>{
 
                const data = filterData(searchInput , restaurants)
@@ -74,7 +74,7 @@ const Body = () => {
       </div>
 
 
-      <div className="restaurant-list">
+      <div className="restaurant-list flex  flex-wrap ">
 
           {       
                    
