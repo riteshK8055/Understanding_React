@@ -35,16 +35,16 @@ const RestaurantMenu = () => {
     }
     return (
 
-    <div className="Menu">
+    <div className="Menu flex justify-evenly mt-3 border-2 border-black p-2 bg-purple-50 ">
 
-        <div className="card">
+        <div className="card w-fit h-fit border-2 border-transparent bg-purple-100 shadow-2xl " >
 
-          <h1>Restaurant id :{id}</h1>
-          <h2>{restraunt.name}</h2>
-          <img  src={IMG_CDN_URL + restraunt.cloudinaryImageId} />
+          <h1 className="font-semibold">Restaurant id :{id}</h1>
+          <h2 className="font-mono font-extrabold">{restraunt.name}</h2>
+          <img className="h-80 w-80"  src={IMG_CDN_URL + restraunt.cloudinaryImageId} />
           <h3>{restraunt.city}</h3>
           <h3>{restraunt.costForTwo/100} rs</h3>
-          <h3>{restraunt.avgRating}</h3>
+          <h3 className="font-sans text-lg font-sans font-extrabold">{restraunt.avgRating}</h3>
 
         </div>
 

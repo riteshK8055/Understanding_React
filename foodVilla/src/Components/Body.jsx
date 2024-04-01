@@ -61,7 +61,7 @@ const Body = () => {
             />
 
             <button
-             className="btn p-1 m-1 bg-purple-700 hover:bg-purple-300 transition-all   rounded-md"
+             className="btn p-1 m-1 bg-purple-700 text-white font-semibold hover:bg-purple-300 transition-all   rounded-md"
              onClick={() =>{
 
                const data = filterData(searchInput , restaurants)

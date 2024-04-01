@@ -19,7 +19,7 @@
 
 
 
-import React, { lazy } from "react";
+import React, { lazy, useState } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./Components/Header";
 import Body from "./Components/Body";
@@ -33,6 +33,7 @@ import { Outlet } from "react-router-dom";
 import RestaurantMenu from "./Components/RestaurantMenu";
 import { lazy,Suspense } from "react";
 import Shimmer from "./Components/Shimmer";
+import userContext from "./utils/useContext";
 // import Instamart from "./Components/Instamart";
 
 const Instamart = lazy(() => import ("./Components/Instamart")); // import it in a lazy way
@@ -40,14 +41,28 @@ const Instamart = lazy(() => import ("./Components/Instamart")); // import it in
 
 
 
-const AppLayout = () => (
+const AppLayout = () => {
 
-    <>
+    const [user , setUser] = useState({
+
+        name : "Akshay Saini",
+        email : "support@Namastedev.com"
+    });
+    
+   return (
+
+    <userContext.Provider
+    value={{
+      user : user,
+      }} 
+  >
         < Header />
-         <Outlet />
+        <Outlet />
         < Footer />
-    </>
-);
+  </userContext.Provider>
+
+   )
+};
 
 
 
