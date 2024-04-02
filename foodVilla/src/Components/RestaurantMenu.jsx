@@ -2,11 +2,12 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { IMG_CDN_URL } from "../config";
 import Shimmer from "./Shimmer";
+ import { addItem } from "../utils/cartSlice";
+import {  useDispatch } from "react-redux";
 
 const RestaurantMenu = () => {
 
     const {id}  = useParams();
-    console.log(id);
 
     const[ restraunt , setRestraunt] = useState({});
     const[menu , setMenu] = useState(null);
@@ -23,10 +24,18 @@ const RestaurantMenu = () => {
 
         const data =await  fetch(`https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.9351929&lng=77.62448069999999&restaurantId=${id}&catalog_qa=undefined&isMenuUx4=true&submitAction=ENTER`);
         const json = await data.json();
-        console.log(json.data.cards[2].card.card.info)
-        setRestraunt(json.data.cards[2].card.card.info);
-        console.log(json.data.cards[4].groupedCard.cardGroupMap.REGULAR.cards[2].card.card.itemCards)
-        setMenu(json.data.cards[4].groupedCard.cardGroupMap.REGULAR.cards[2].card.card.itemCards)
+        
+        setRestraunt(json?.data?.cards[2]?.card?.card?.info);
+        setMenu(json?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card?.itemCards)
+    }
+
+    const dispatch = useDispatch();
+
+   
+    const addFoodItems = (item) => {
+
+        dispatch(addItem(item));
+
     }
 
     if(!menu){
@@ -51,8 +60,15 @@ const RestaurantMenu = () => {
         { <div> 
 
             <h1>Menu</h1>
-            <ul>
-            {Object.values(menu).map((item) => <li key={item.card.info.id}>{item.card.info.name}</li>)}
+            <ul  >
+            {Object.values(menu).map((item) => <li className="p-1" key={item?.card?.info?.id}>{item?.card?.info?.name}-
+              <button 
+              onClick={() => {
+
+               addFoodItems(item);
+                
+              }}
+              className="bg-blue-100 mx-2 p-1 rounded-md">add</button></li>)}
             </ul>
         </div>   }
 

@@ -1,11 +1,13 @@
 import React from "react";
+import { UseSelector, useSelector } from "react-redux";
 
 const Cart = () => {
 
+    const  cartItems = useSelector(store => store.cart.items);
     return (
 
         <div>
-            <h2>This is my cart page</h2>
+            <h1 className="font-bold text-lg">Cart Items - {cartItems.length}</h1>
         </div>
     );
 };

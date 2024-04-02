@@ -35,7 +35,8 @@ import { lazy,Suspense } from "react";
 import Shimmer from "./Components/Shimmer";
 import userContext from "./utils/useContext";
 // import Instamart from "./Components/Instamart";
-
+import { Provider } from "react-redux";
+import store from "./utils/store";
 const Instamart = lazy(() => import ("./Components/Instamart")); // import it in a lazy way
 
 
@@ -51,15 +52,23 @@ const AppLayout = () => {
     
    return (
 
-    <userContext.Provider
-    value={{
-      user : user,
-      }} 
-  >
-        < Header />
-        <Outlet />
-        < Footer />
-  </userContext.Provider>
+     <Provider store={store}>
+
+         <userContext.Provider
+         
+             value={{
+
+                 user : user,
+                 setUser: setUser
+             }} 
+         >
+            < Header />
+            <Outlet />
+            < Footer />
+
+         </userContext.Provider>
+
+     </Provider>
 
    )
 };
