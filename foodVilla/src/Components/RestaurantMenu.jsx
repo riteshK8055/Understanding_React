@@ -54,7 +54,7 @@ const RestaurantMenu = () => {
           <img className="h-80 w-80"  src={IMG_CDN_URL + restraunt.cloudinaryImageId} />
           <h3>{restraunt.city}</h3>
           <h3>{restraunt.costForTwo/100} rs</h3>
-          <h3 className="font-sans text-lg font-sans font-extrabold">{restraunt.avgRating}</h3>
+          <h3 className="font-sans text-lg font-extrabold">{restraunt.avgRating}</h3>
 
         </div>
 
