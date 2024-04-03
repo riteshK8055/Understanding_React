@@ -5,6 +5,7 @@ import Shimmer from "./Shimmer";
  import { addItem } from "../utils/cartSlice";
 import {  useDispatch } from "react-redux";
 
+
 const RestaurantMenu = () => {
 
     const {id}  = useParams();
