@@ -5,6 +5,19 @@ import { AttachFile as AttachFileIcon, Send as SendIcon } from "@mui/icons-mater
 import { grayColor } from "../constants/color";
 import { InputBox } from "../components/styles/StyledComponent";
 import { orange } from "../constants/color";
+import { sampleMessage } from "../constants/sampleData";
+import MessageComponent from "../components/shared/MessageComponent";
+import FileMenu from "../components/dialogs/FileMenu";
+
+
+const user = {
+
+    _id : "smntcckkjhaulkdhmchyt",
+    name: "Ritesh kumaar"
+}
+
+
+
 const Chat = () => {
 
     const containerRef = useRef(null);
@@ -23,12 +36,17 @@ const Chat = () => {
                 overflowY : "auto"
               }}
            >
-            {/* Message Render */}
+            {
+                sampleMessage.map((i) => (
+                    <MessageComponent key={i._id} message={i} user={user} />
+                ))
+            }
            </Stack>
 
            <form style={{
              height:"10%",
-           }}>
+           }}
+           >
 
             <Stack
              direction={"row"}
@@ -67,6 +85,8 @@ const Chat = () => {
             </Stack>
 
            </form>
+
+           <FileMenu />
          </>
     );
 };

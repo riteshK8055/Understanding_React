@@ -60,5 +60,67 @@ export const sampleNotification = [
       name: "John Boi",
     },
     _id: "2",
+  },
+];
+
+
+export const sampleMessage = [
+
+  {
+  
+
+  attachments: [],
+  
+  content: "hello guys , how are you all ",
+  
+  _id: "smntccertweg",
+  
+  sender: {
+  
+  _id: "user._id",
+  
+  name: "Anshul",
+  
+  },
+  
+  chat: "chatId",
+  
+  createdAt: "2024-04-12T10:41:30.6302",
+  
+  },
+
+
+  {
+
+    attachments: [
+  
+      {
+      
+      public_id: "rksowtfu 2",
+      
+      url: "https://www.w3schools.com/howto/img_avatar.png", 
+    
+      },
+      
+      ],
+      
+      content: "",
+      
+      _id: "smntcckk",
+      
+      sender: {
+      
+      _id: "smntcckkjhaulkdhmchyt",
+      
+      name: "Ravi",
+      
+      },
+      
+      chat: "chatId",
+      
+      createdAt: "2024-04-12T10:41:30.6302",
+      
+
   }
+    
 ]
