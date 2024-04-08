@@ -1,11 +1,13 @@
-import React, { memo, useEffect, useState } from "react";
-import { Grid , IconButton , Tooltip , Box , Drawer , Stack , Typography , TextField, Button } from "@mui/material";
-import { Add as AddIcon, Delete as DeleteIcon, Done as DoneIcon, Edit as EditIcon, KeyboardBackspace as KeyboardBackspaceIcon, Menu as MenuIcon  } from "@mui/icons-material";
+import React, { memo, useEffect, useState , lazy, Suspense} from "react";
+import { Grid , IconButton , Tooltip , Box , Drawer , Stack , Typography , TextField, Button, Backdrop } from "@mui/material";
+import { Add as AddIcon, Delete as DeleteIcon, Done as DoneIcon, Edit as EditIcon, KeyboardBackspace as KeyboardBackspaceIcon, Menu as MenuIcon } from "@mui/icons-material";
 import { matBlack } from "../constants/color";
 import { useNavigate , useSearchParams} from "react-router-dom"; 
 import { Link } from "../components/styles/StyledComponent";
 import AvatarCard from "../components/shared/AvatarCard";
 import {sampleChats} from "../constants/sampleData";
+
+const ConfirmDeleteDialog = lazy(()=> import("../components/dialogs/ConfirmDeleteDialog"));
 
 export const Groups = () => {
 
@@ -65,6 +67,11 @@ export const Groups = () => {
         console.log("Add Member")
     };
 
+    const deleteHandler = () => {
+
+        console.log("Delete Handler");
+        closeConfirmDeleteHandler();
+    }
 
     useEffect(() => {
 
@@ -257,7 +264,15 @@ export const Groups = () => {
         </Grid>
 
 
-        {confirmDeleteDialog && <></>}
+        {confirmDeleteDialog && <Suspense fallback = {<Backdrop open/>}>
+
+            <ConfirmDeleteDialog 
+            open={confirmDeleteDialog} 
+            handleClose={closeConfirmDeleteHandler}
+            deleteHandler={deleteHandler}
+             
+            />
+            </Suspense>}
 
        
        <Drawer 
