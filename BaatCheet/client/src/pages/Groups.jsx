@@ -1,13 +1,19 @@
 import React, { memo, useEffect, useState , lazy, Suspense} from "react";
 import { Grid , IconButton , Tooltip , Box , Drawer , Stack , Typography , TextField, Button, Backdrop } from "@mui/material";
 import { Add as AddIcon, Delete as DeleteIcon, Done as DoneIcon, Edit as EditIcon, KeyboardBackspace as KeyboardBackspaceIcon, Menu as MenuIcon } from "@mui/icons-material";
-import { matBlack } from "../constants/color";
+import { bgGradient, matBlack } from "../constants/color";
 import { useNavigate , useSearchParams} from "react-router-dom"; 
 import { Link } from "../components/styles/StyledComponent";
 import AvatarCard from "../components/shared/AvatarCard";
-import {sampleChats} from "../constants/sampleData";
+import {sampleChats, sampleUsers} from "../constants/sampleData";
+import UserItem from "../components/shared/UserItem";
 
 const ConfirmDeleteDialog = lazy(()=> import("../components/dialogs/ConfirmDeleteDialog"));
+const AddMemberDialog  = lazy(()=> import ("../components/dialogs/AddMemberDialog"));
+
+
+const isAddMember = false;
+
 
 export const Groups = () => {
 
@@ -73,10 +79,17 @@ export const Groups = () => {
         closeConfirmDeleteHandler();
     }
 
+    const removeMemberHandler= () => {
+
+    }
+
     useEffect(() => {
 
-        setGroupName(`Group Name ${chatId}`);
-        setGroupNameUpdatedValue("Group Name");
+        if(chatId){
+
+            setGroupName(`Group Name ${chatId}`);
+           setGroupNameUpdatedValue("Group Name");
+        }
 
         return () => {
 
@@ -197,9 +210,11 @@ export const Groups = () => {
             xs: "none",
             sm: "block",
            },
+
+         
          }}
         sm={4}
-        bgcolor={"bisque"}
+        
     >
         <GroupList  myGroups={sampleChats} chatId={chatId} />
      </Grid>
@@ -245,13 +260,28 @@ export const Groups = () => {
             }}
 
             spacing={"2rem"}
-            bgcolor={"bisque"}
             height={"50vh"}
             overflow={"auto"}
 
          >
 
             {/* Members */}
+
+            {
+                sampleUsers.map((i) => (
+
+                    <UserItem user={i} key={i._id} isAdded 
+                    styling={{
+                        
+                        boxShadow: "0  0 0.5rem rgba(0,0,0,0.2)",
+                        padding: "1rem  2rem",
+                        borderRadius: "1rem",
+                    }}
+
+                    handler={removeMemberHandler}
+                 />
+                ))
+            }
 
          </Stack>
 
@@ -264,7 +294,15 @@ export const Groups = () => {
         </Grid>
 
 
-        {confirmDeleteDialog && <Suspense fallback = {<Backdrop open/>}>
+       {
+        isAddMember && <Suspense fallback={ <Backdrop open  />}>
+
+         <AddMemberDialog />
+        
+        </Suspense>
+       }
+
+        {confirmDeleteDialog && <Suspense fallback = {<Backdrop open />}>
 
             <ConfirmDeleteDialog 
             open={confirmDeleteDialog} 
@@ -278,17 +316,19 @@ export const Groups = () => {
        <Drawer 
        sx={{
 
+
         display : {
 
             xs:"block",
             sm: "none",
         },
+
        }}
        open={isMobileMenuOpen}
        onClose= {handleMobileClose}
        >
 
-        <GroupList w={"50vw"} myGroups={sampleChats} chatId={chatId} />
+        <GroupList  myGroups={sampleChats} chatId={chatId} />
        </Drawer>
 
 
@@ -300,8 +340,12 @@ export const Groups = () => {
 const GroupList = ({w="100%" , myGroups=[] , chatId}) => (
 
 
-    <Stack width={w} >
+    <Stack width={w}
+        sx={{
 
+            backgroundImage: bgGradient  , height: "100vh", overflow: "auto"
+        }}
+    >
         {
             myGroups.length > 0 ? (myGroups.map((group) => <GroupListItem group = {group} chatId = {chatId} key={group._id} />)
            ) : <Typography textAlign={"center"} padding= "1rem" >No Groups Found....</Typography>
