@@ -43,13 +43,13 @@ const adminTabs = [
 
   {
     name: "Users",
-    path: "/admin/users-management",
+    path: "/admin/users",
     icon: <ManageAccountsIcon />,
   },
 
   {
     name: "Chats",
-    path: "/admin/chats-management",
+    path: "/admin/chats",
     icon: <GroupsIcon />,
   },
 
@@ -77,7 +77,7 @@ const SideBar = ({ w = "100%" }) => {
 
       <Stack spacing={"1rem"}>
         {adminTabs.map((tab) => (
-          <Link key={tab.name}
+          <Link to={tab.path} key={tab.name}
            sx={
             location.pathname === tab.path && {
                
