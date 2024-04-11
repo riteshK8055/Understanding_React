@@ -15,6 +15,7 @@ import {
   CurveButton,
 } from "../../components/styles/StyledComponent";
 import { matBlack } from "../../constants/color";
+import { DoughnutChart, LineChart } from "../../components/specific/Chart";
 
 const Dashboard = () => {
   const Appbar = (
@@ -64,9 +65,9 @@ const Dashboard = () => {
       alignItems={"center"}
       margin={"2rem 0"}
     >
-      <Widget title={"Users"} value={34} Icon={<PersonIcon />}  />
-      <Widget title={"Chats"} value={3} Icon={<GroupIcon />}  />
-      <Widget title={"Messages"} value={453} Icon={<MessageIcon />}  />
+      <Widget title={"Users"} value={34} Icon={<PersonIcon />} />
+      <Widget title={"Chats"} value={3} Icon={<GroupIcon />} />
+      <Widget title={"Messages"} value={453} Icon={<MessageIcon />} />
     </Stack>
   );
 
@@ -75,7 +76,20 @@ const Dashboard = () => {
       <Container component={"main"}>
         {Appbar}
 
-        <Stack direction={"row"} spacing={"2rem"} flexWrap={"wrap"}>
+        <Stack
+          direction={{
+            xs: "column",
+            lg: "row",
+          }}
+          flexWrap={"wrap"}
+          justifyContent={"center"}
+          alignItems={{
+            xs: "center",
+            lg: "stretch",
+          }}
+
+          sx={{gap: "2rem"}}
+        >
           <Paper
             elevation={3}
             sx={{
@@ -83,14 +97,13 @@ const Dashboard = () => {
               borderRadius: "1rem",
               width: "100%",
               maxWidth: "45rem",
-              height : "25rem",
             }}
           >
             <Typography variant={"h4"} margin={"2rem 0"}>
               Last Messages
             </Typography>
 
-            {"Chart"}
+            <LineChart value={[23, 56, 33, 67, 33]} />
           </Paper>
 
           <Paper
@@ -103,10 +116,12 @@ const Dashboard = () => {
               alignItems: "center",
               width: "100%",
               maxWidth: "25rem",
-              height : "25rem"
             }}
           >
-            {"Dougnut Chart"}
+            <DoughnutChart
+              labels={["single Chat", "group chats"]}
+              value={[23, 66]}
+            />
 
             <Stack
               position={"absolute"}
@@ -130,39 +145,37 @@ const Dashboard = () => {
   );
 };
 
-
-const Widget = ({title , value , Icon}) => 
-
- <Paper
-  
-  elevation={3}
-  sx={{
-    padding:"2rem",
-    margin: "2rem 0",
-    borderRadius : "1.5rem",
-    width : "20rem",
-  }}
- >
-
+const Widget = ({ title, value, Icon }) => (
+  <Paper
+    elevation={3}
+    sx={{
+      padding: "2rem",
+      margin: "2rem 0",
+      borderRadius: "1.5rem",
+      width: "20rem",
+    }}
+  >
     <Stack alignItems={"center"} spacing={"1rem"}>
       <Typography
-       sx={{
-        color : "rgba(0,0,0,0.7)",
-        borderRadius : "50%",
-        border : `5px solid ${matBlack}`,
-        width : "5rem",
-        height : "5rem",
-        display : "flex",
-        justifyContent : "center",
-        alignItems : "center",
-       }}
-      >{value}</Typography>
+        sx={{
+          color: "rgba(0,0,0,0.7)",
+          borderRadius: "50%",
+          border: `5px solid ${matBlack}`,
+          width: "5rem",
+          height: "5rem",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        {value}
+      </Typography>
       <Stack direction={"row"} spacing={"1rem"} alignSelf={"center"}>
         {Icon}
         <Typography>{title}</Typography>
       </Stack>
     </Stack>
-
-</Paper>
+  </Paper>
+);
 
 export default Dashboard;
