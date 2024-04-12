@@ -337,9 +337,47 @@ export const dashboardData = {
 
         name : "Ravi Singh",
         avatar : "https://www.w3schools.com/howto/img_avatar.png",
-      }
+      },
 
     },
+],
+
+messages :[
+
+  {
+    attachments:[],
+    content:"hey, dude whats up",
+    _id: "uydrcviuytdy",
+    sender:{
+      avatar:"https://www.w3schools.com/howto/img_avatar.png",
+      name:"adam",
+    },
+    chat:"chatId",
+    groupChat:false,
+    createdAt: "2024-04-12T10:41:30.6302",
+  },
+
+  {
+    attachments:[
+
+      {
+        public_id:"asdsad 2",
+        url: "https://www.w3schools.com/howto/img_avatar.png"
+      }
+    ],
+
+    content:"",
+    _id: "wefyujiyjtrhewfwsdvertytj",
+    sender:{
+      avatar:"https://www.w3schools.com/howto/img_avatar.png",
+      name:"batista",
+    },
+    chat:"chatID",
+    groupChat: true,
+    createdAt:  "2024-04-12T10:41:30.6302"
+  }
+
 ]
+
 }
 

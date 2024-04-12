@@ -43,4 +43,4 @@ const AvatarCard = ({avatar = [], max=4}) => {
  ) 
 }
 
-export default AvatarCard
+export default AvatarCard;
