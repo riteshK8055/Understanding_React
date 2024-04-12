@@ -299,11 +299,47 @@ export const dashboardData = {
     {
       name : "John Boi",
       avatar : "https://www.w3schools.com/howto/img_avatar.png",
-      _id : "2",
+      _id: "2",
       username : "John_boi",
       friends : 27,
       groups : 15,
     }
 
   ],
+
+  chats :[
+    
+    {
+      name : "FunTimes",
+      avatar : ["https://www.w3schools.com/howto/img_avatar.png",],
+      _id : "1",
+      groupChat : false,
+      members:[{_id:"1" , avatar:"https://www.w3schools.com/howto/img_avatar.png"} , {_id:"2" , avatar:"https://www.w3schools.com/howto/img_avatar.png"}],
+      totalMembers : 2,
+      totalMessages : 20,
+      creator : {
+
+        name : "ritesh Kumar",
+        avatar : "https://www.w3schools.com/howto/img_avatar.png",
+      }
+
+    },
+
+    {
+      name : "Family Forever",
+      avatar : ["https://www.w3schools.com/howto/img_avatar.png"],
+      _id : "2",
+      groupChat : true,
+      members:[{_id:"1" , avatar:"https://www.w3schools.com/howto/img_avatar.png"} , {_id:"2" , avatar:"https://www.w3schools.com/howto/img_avatar.png"}],
+      totalMembers : 10,
+      totalMessages : 265,
+      creator : {
+
+        name : "Ravi Singh",
+        avatar : "https://www.w3schools.com/howto/img_avatar.png",
+      }
+
+    },
+]
 }
+
