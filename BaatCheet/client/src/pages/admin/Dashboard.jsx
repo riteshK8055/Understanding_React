@@ -87,8 +87,7 @@ const Dashboard = () => {
             xs: "center",
             lg: "stretch",
           }}
-
-          sx={{gap: "2rem"}}
+          sx={{ gap: "2rem" }}
         >
           <Paper
             elevation={3}

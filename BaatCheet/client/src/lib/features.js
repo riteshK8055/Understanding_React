@@ -1,49 +1,40 @@
 import moment from "moment";
 
-
-
 const fileFormat = (url) => {
+  const fileExt = url.split(".").pop();
 
-    const fileExt = url.split(".").pop();
+  if (fileExt === "mp4" || fileExt == "webm" || fileExt === "ogg")
+    return "video";
 
-    if(fileExt === "mp4" || fileExt == "webm" || fileExt === "ogg" )
-       
-      return "video";
+  if (fileExt === "mp3" || fileExt === "wav") return "audio";
 
-    if(fileExt === "mp3" || fileExt === "wav") return "audio";
+  if (
+    fileExt === "png" ||
+    fileExt === "jpg" ||
+    fileExt === "jpeg" ||
+    fileExt === "gif"
+  )
+    return "image";
 
-    if(
-        fileExt === "png" ||
-        fileExt === "jpg" ||
-        fileExt === "jpeg" ||
-        fileExt === "gif"
-    )
-
-     return "image";
-
-     return "file";
+  return "file";
 };
 
-
- const transformImage = (url = "" , width= 100) => url ;
+const transformImage = (url = "", width = 100) => url;
 
 const getLast7Days = () => {
-
   const currentDate = moment();
 
   const getLast7Days = [];
 
-  for(let i = 0 ; i< 7 ; i++) {
-
-    const dayDate = currentDate.clone().subtract(i , "days");
+  for (let i = 0; i < 7; i++) {
+    const dayDate = currentDate.clone().subtract(i, "days");
 
     const dayName = dayDate.format("dddd");
 
-    getLast7Days.unshift(dayName)
-
+    getLast7Days.unshift(dayName);
   }
 
-  return getLast7Days ; 
+  return getLast7Days;
 };
 
-export {fileFormat ,transformImage ,getLast7Days};
+export { fileFormat, transformImage, getLast7Days };
