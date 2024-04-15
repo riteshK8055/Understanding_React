@@ -1,14 +1,26 @@
 import React from 'react'
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import { faBars , faMicrophone  ,faSearch, faVideo, faBell , faUser} from '@fortawesome/free-solid-svg-icons';
+import { toggleMenu } from '../utils/appSlice';
+import { useDispatch } from 'react-redux';
+
 
 
 
 const Header = () => {
+
+  const dispatch = useDispatch();
+
+  const toggleMenuHandler = () => {
+
+    dispatch(toggleMenu())
+
+  }
+
   return (
     <div className="grid grid-flow-col p-3 shadow-lg">
       <div className='flex col-span-1 '>
-      <button className='px-3 py-2  rounded-full hover:bg-gray-200'><FontAwesomeIcon className="h-6" icon={faBars} /></button>
+      <button onClick={() => toggleMenuHandler()} className='px-3 py-2  rounded-full hover:bg-gray-200'><FontAwesomeIcon className="h-6" icon={faBars} /></button>
       <img className="h-6 m-2" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/YouTube_Logo_2017.svg/1280px-YouTube_Logo_2017.svg.png" alt="youtube Icon" />
       
       </div>

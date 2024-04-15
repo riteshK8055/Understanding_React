@@ -1,22 +1,42 @@
-import React from 'react'
+import React from 'react';
+import Button from './Button';
 
+const list = [
+  "Science",
+  "Space",
+  "Cooking",
+  "Spanish",
+  "History",
+  "DIY",
+  "Gaming",
+  "Fitness",
+  "Travel",
+  "Art",
+  "Books",
+  "Tech"
+]
 const ButtonList = () => {
+
+
   return (
-    <ul class=" flex gap-4 my-3 ">
-    <button class="p-2 bg-gray-100 rounded-lg ">javascript</button>
-    <button class="p-2 bg-gray-100 rounded-lg ">mixes</button>
-    <button class="p-2 bg-gray-100 rounded-lg ">wwe championship</button>
-    <button class="p-2 bg-gray-100 rounded-lg ">music</button>
-    <button class="p-2 bg-gray-100 rounded-lg ">buttonve</button>
-    <button class="p-2 bg-gray-100 rounded-lg ">shark tank</button>
-    <button class="p-2 bg-gray-100 rounded-lg ">debuttonveries</button>
-    <button class="p-2 bg-gray-100 rounded-lg ">wickets</button>
-    <button class="p-2 bg-gray-100 rounded-lg ">karna</button>
-    <button class="p-2 bg-gray-100 rounded-lg ">indian soap operators</button>
-    <button class="p-2 bg-gray-100 rounded-lg ">javascript</button>
-    <button class="p-2 bg-gray-100 rounded-lg ">mixes</button>
-    
-  </ul>
+   
+    <div className="flex ">
+       
+       {list.map((item, index) => (
+        <Button key={index} name={item} />
+      ))}
+       {/* <Button  name = "cricket" /> 
+       <Button  name = "news" /> 
+       <Button  name = "anime" /> 
+       <Button  name = "loksabhaa" /> 
+       <Button  name = "wwe championship" /> 
+       <Button  name = "javascript" /> 
+       <Button  name = "react" /> 
+       <Button  name = "frontend dev" /> 
+       <Button  name = "skin care" />  */}
+      
+    </div>
+
   )
 }
 

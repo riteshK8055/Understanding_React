@@ -20,7 +20,7 @@ import {
 
 const MenuItems = () => {
   return (
-    <div className="p-5 shadow-lg w-60  overflow-x-hidden overflow-y-scroll h-screen">
+    <div className="p-5 shadow-lg w-56 overflow-x-hidden overflow-y-scroll h-screen">
       <section>
         <ul>
           <li className="hover:bg-gray-200 rounded-lg flex space-x-5 items-center p-3">
@@ -43,7 +43,7 @@ const MenuItems = () => {
           </li>
         </ul>
       </section>
-      <div className="border border-gray-200 relative right-5 w-56"></div>
+      <div className="border border-gray-200 relative m-2 right-5 w-56"></div>
       <section>
         <ul>
           <li className="hover:bg-gray-200 rounded-lg flex space-x-5 items-center p-3">
@@ -60,11 +60,11 @@ const MenuItems = () => {
           </li>
         </ul>
       </section>
-      <div className="border border-gray-200 relative right-5 w-56"></div>
+      <div className="border border-gray-200 relative right-5 w-56 m-2"></div>
       <h1 className="font-bold text-lg p-2">Explore</h1>
       <section>
         <ul>
-        <li className="hover:bg-gray-200 rounded-lg flex space-x-5 items-center p-3">
+        <li className="hover:bg-gray-200 rounded-lg flex space-x-5 items-center p-3 ">
           <button className="p-1">
             <FontAwesomeIcon className="h-5" icon={faArrowTrendUp} />
           </button>
