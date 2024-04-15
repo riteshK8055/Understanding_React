@@ -11,7 +11,7 @@ const SideBar = () => {
   return (
    
     !isMenuOpen? (
-      <ul className='w-24 m-2 flex flex-col'>
+      <ul className='w-24 m-2 flex flex-col '>
       <li className="hover:bg-gray-200 rounded-lg flex flex-col items-center py-5">
         <button className='p-1'><FontAwesomeIcon className="h-6" icon={faHouse} /></button>
         <span>Home</span>

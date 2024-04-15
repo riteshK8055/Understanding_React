@@ -20,7 +20,7 @@ import {
 
 const MenuItems = () => {
   return (
-    <div className="p-5 shadow-lg w-56 overflow-x-hidden overflow-y-scroll h-screen">
+    <div className="p-5 shadow-lg w-full overflow-y-scroll overflow-x-hidden h-screen">
       <section>
         <ul>
           <li className="hover:bg-gray-200 rounded-lg flex space-x-5 items-center p-3">
