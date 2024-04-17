@@ -3,18 +3,12 @@
 ### Live Link: https://travell-web-app1.netlify.app/
 
 # Travel Web App with ReactJs
-This is a Travel Web Development Project. I have created it using React js, I have also added Tailwind CSS framework in this application, firebase for authentication, aos for animation . I have also integrated some tools like React Hook form for form validation, react-hot-toast for notification and popup and swiper slider.
+This is a Travel Web Development Project. I have created it using React js, I have also added Tailwind CSS framework in this application, aos for animation . I have also integrated some tools like React Hook form for form validation, react-hot-toast for notification and popup and swiper slider.
 
-I have created 4 pages(Home, About, SingleDataDetails, Login/Register page).   I have implemented a search bar where user can search their destination using address/location. If a user find his desirable destination, he can book this desired place after ensuring loggedIn. And the booking data is being stored in local storage .  Here I have used prompt. In Navbar, I have shown user name and logout functionality. I have also implemented a popup video modal when a user click the image in single destination details page. I have handled  errors for authentication. I have ensured secure storage and handling of authentication tokens.
+I have created 4 pages(Home, About, SingleDataDetails, Login/Register page).   
 
+This project is build using react libraries like react-router-dom, redux toolkit for state management , tailwind for styling etc.
 
-### Some Login user data
-```
-email:  amir@gmail.com
-password: 123456
-
-
-```
 
 
 ## Getting Started
@@ -32,14 +26,14 @@ Before you begin, ensure you have the following dependencies installed:
 1. Clone the repository to your local machine using the following command:
 
 ```
-git clone https://github.com/saharabanu/travel-web-app.git
+git clone https://github.com/riteshK8055/Understanding_React.git/evergreen_escape
 
 ```
 
 2. Navigate to the project directory:
 
    ```bash
-   cd travel-web-app
+   cd evergreen_escape
 
    ```
 
