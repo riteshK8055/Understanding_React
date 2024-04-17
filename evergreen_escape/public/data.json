@@ -1,0 +1,77 @@
+ 
+ 
+ [
+    {
+      "id": 1,
+      "img": "https://i.ibb.co/jJ068GX/cox-s-bazaar-sea-beach.jpg", 
+      "title": "fgg",
+      "location": "Greater London, UK",
+      "desc": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque, blanditiis itaque esse assumenda eveniet fugiat harum possimus maiores labore dolore perspiciatis rerum, amet obcaecati quae nam asperiores veritatis pariatur fugit.",
+      "price": 45
+    },
+    {
+      "id": 2,
+      "img": "https://i.ibb.co/jJ068GX/cox-s-bazaar-sea-beach.jpg",
+      "title": "fgg",
+      "location": "Thailand",
+      "desc": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque, blanditiis itaque esse assumenda eveniet fugiat harum possimus maiores labore dolore perspiciatis rerum, amet obcaecati quae nam asperiores veritatis pariatur fugit.",
+      "price": 34
+    },
+    {
+      "id": 3,
+      "img": "https://i.ibb.co/jJ068GX/cox-s-bazaar-sea-beach.jpg",
+      "title": "fgg",
+      "location": "Singapore",
+      "desc": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque, blanditiis itaque esse assumenda eveniet fugiat harum possimus maiores labore dolore perspiciatis rerum, amet obcaecati quae nam asperiores veritatis pariatur fugit.",
+      "price": 100
+    },
+    {
+      "id": 4,
+      "img": "https://i.ibb.co/jJ068GX/cox-s-bazaar-sea-beach.jpg",
+      "title": "fgg",
+      "location": "Bangladesh",
+      "desc": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque, blanditiis itaque esse assumenda eveniet fugiat harum possimus maiores labore dolore perspiciatis rerum, amet obcaecati quae nam asperiores veritatis pariatur fugit.",
+      "price": 78
+    },
+    {
+      "id": 5,
+      "img": "https://i.ibb.co/jJ068GX/cox-s-bazaar-sea-beach.jpg",
+      "title": "fgg",
+      "location": "Bangladesh",
+      "desc": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque, blanditiis itaque esse assumenda eveniet fugiat harum possimus maiores labore dolore perspiciatis rerum, amet obcaecati quae nam asperiores veritatis pariatur fugit.",
+      "price": 78
+    },
+    {
+      "id": 6,
+      "img": "https://i.ibb.co/jJ068GX/cox-s-bazaar-sea-beach.jpg",
+      "title": "fgg",
+      "location": "Bangladesh",
+      "desc": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque, blanditiis itaque esse assumenda eveniet fugiat harum possimus maiores labore dolore perspiciatis rerum, amet obcaecati quae nam asperiores veritatis pariatur fugit.",
+      "price": 78
+    },
+    {
+      "id": 7,
+      "img": "https://i.ibb.co/jJ068GX/cox-s-bazaar-sea-beach.jpg",
+      "title": "fgg",
+      "location": "Bangladesh",
+      "desc": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque, blanditiis itaque esse assumenda eveniet fugiat harum possimus maiores labore dolore perspiciatis rerum, amet obcaecati quae nam asperiores veritatis pariatur fugit.",
+      "price": 78
+    },
+    {
+      "id": 8,
+      "img": "https://i.ibb.co/jJ068GX/cox-s-bazaar-sea-beach.jpg",
+      "title": "fgg",
+      "location": "Bangladesh",
+      "desc": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque, blanditiis itaque esse assumenda eveniet fugiat harum possimus maiores labore dolore perspiciatis rerum, amet obcaecati quae nam asperiores veritatis pariatur fugit.",
+      "price": 78
+    },
+    {
+      "id": 9,
+      "img": "https://i.ibb.co/jJ068GX/cox-s-bazaar-sea-beach.jpg",
+      "title": "fgg",
+      "location": "Bangladesh",
+      "desc": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque, blanditiis itaque esse assumenda eveniet fugiat harum possimus maiores labore dolore perspiciatis rerum, amet obcaecati quae nam asperiores veritatis pariatur fugit.",
+      "price": 78
+    }
+  ]
+  
