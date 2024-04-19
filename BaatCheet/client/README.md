@@ -12,10 +12,9 @@ elevate the user experience through seamless navigation and state management.
 performance significantly.
 • This chat website currently operates without a backend, yet the React code is structured to seamlessly integrate
 Backend functionality in the future. Presently, it utilizes props and Dummy data to illustrate the envisioned user
-experience..
-• The application includes an admin dashboard tracking user count, group chat activity, and message volume
-over time. Additionally, it facilitates file transfer for various media types , including music, videos, and
-documents
+experience.
+**The application includes an admin dashboard tracking user count group chat activity, and message volume over time Additionally, it facilitates file transfer for various media types , including music, videos, and documents**
+ 
 
 ## Getting Started
 
